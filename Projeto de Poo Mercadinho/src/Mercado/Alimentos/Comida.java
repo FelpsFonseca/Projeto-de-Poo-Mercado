@@ -1,7 +1,7 @@
 package Mercado.Alimentos;
 
 public class Comida {
-    private double preco;
-    private int quantidade;
-    private String nome;
+    protected double preco; //Protected pois as frutas podem herdar como public mas as outras classes que não herdam é private
+    protected int quantidade;
+    protected String nome;
 }
