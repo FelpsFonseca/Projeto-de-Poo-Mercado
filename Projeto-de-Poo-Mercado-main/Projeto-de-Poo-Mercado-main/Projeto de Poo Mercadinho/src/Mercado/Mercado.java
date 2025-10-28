@@ -5,3 +5,11 @@ public class Mercado {
     private String endereco;
     private int lucro;
 }
+
+public void MostrarInfo(){
+
+}
+
+public void DinheiroArrecadado(){
+
+}

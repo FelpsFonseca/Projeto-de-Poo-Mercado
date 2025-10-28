@@ -8,4 +8,10 @@ public class Comida {
     protected String validade;
 }
 
-public void
+public void QuantidadeComprada(){
+
+}
+
+public void Addalimento(){
+
+}
