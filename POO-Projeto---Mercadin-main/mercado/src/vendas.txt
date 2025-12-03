@@ -1,5 +1,11 @@
-Cliente: Kevin
+Cliente: Felipe
 Itens:
  - banana: R$ 5.0
 Total da Venda: R$ 5.0
+--------------------------------------------------
+Cliente: Kevin
+Itens:
+ - banana: R$ 5.0
+ - maça: R$ 5.0
+Total da Venda: R$ 10.0
 --------------------------------------------------

@@ -3,16 +3,16 @@ package Projeto.src;
 import java.util.ArrayList;
 
 public class Cliente {
-    private String nome;
+    private String nome; //Atributos
     private String cpf;
-
-    private ArrayList<Produto> carrinho = new ArrayList<>();
-
+    //Aqui ocorre polimorfismo pois o tipo da lista é a superclasse Produto mas na prática elaa guarda objetos de suas subclasses
+    private ArrayList<Produto> carrinho = new ArrayList<>(); //Lista de Produto em que o carrinho pode conte qualquer objeto que seja um produto ou sua subclasse
+    //Construtor usado quando se faz new Cliente(...) servindo para inicializar os atributos
     public Cliente(String nome, String cpf) {
         this.nome = nome;
         this.cpf = cpf;
     }
-
+    //Metodo onde ocorre polimorfismo
     public void adicionarProduto(Produto p) {
         carrinho.add(p);
     }

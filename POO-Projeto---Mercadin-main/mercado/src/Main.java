@@ -62,7 +62,6 @@ public class Main {
                         System.out.println("Nenhuma comida disponível no momento.");
                         continue;
                     }
-
                     int i = 1;
                     for (Comida c : mercado.getComidas()) {
                         System.out.print(i + " - ");

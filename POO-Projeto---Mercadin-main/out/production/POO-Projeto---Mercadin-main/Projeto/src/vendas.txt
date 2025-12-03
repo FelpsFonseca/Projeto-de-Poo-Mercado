@@ -1,4 +1,4 @@
-Cliente: Kevin
+Cliente: Felipe
 Itens:
  - banana: R$ 5.0
 Total da Venda: R$ 5.0

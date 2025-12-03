@@ -65,16 +65,28 @@ public class Mercado {
         conteudoVenda.append("Total da Venda: R$ ").append(soma).append("\n");
         conteudoVenda.append("--------------------------------------------------\n");
 
+        Path caminhoVendas = Paths.get("src", "vendas.txt");
+
+        if (!Files.exists(caminhoVendas)) {
+            Path alternativa = Paths.get("mercado").resolve(caminhoVendas);
+
+            if (Files.exists(alternativa)) {
+                caminhoVendas = alternativa;
+            }
+        }
+
         try {
+            Files.createDirectories(caminhoVendas.getParent());
+
             //Escreve o bloco de texto inteiro no arquivo
-            Files.writeString(Path.of("src/vendas.txt"),
+            Files.writeString(caminhoVendas,
                     conteudoVenda.toString(),
                     java.nio.file.StandardOpenOption.CREATE,
                     java.nio.file.StandardOpenOption.APPEND
             );
 
         } catch (IOException e) {
-            System.out.println("Erro ao registrar venda: " + e.getMessage());
+            System.out.println("Erro ao registrar venda: " + caminhoVendas.toAbsolutePath() + " - " + e.getMessage());
         }
     }
 
