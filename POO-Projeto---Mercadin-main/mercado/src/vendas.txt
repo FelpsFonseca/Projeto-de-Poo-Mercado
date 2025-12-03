@@ -1,0 +1,5 @@
+Cliente: Kevin
+Itens:
+ - banana: R$ 5.0
+Total da Venda: R$ 5.0
+--------------------------------------------------
