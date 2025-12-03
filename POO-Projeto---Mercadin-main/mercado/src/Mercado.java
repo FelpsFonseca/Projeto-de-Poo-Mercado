@@ -3,6 +3,7 @@ package Projeto.src;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -84,8 +85,21 @@ public class Mercado {
 
 
     public void lerEstoque(Path arquivo) {
+        Path caminho = arquivo;
+
+        if (!Files.exists(caminho)) {
+            Path caminhoAlternativo = Paths.get("mercado").resolve(arquivo);
+
+            if (Files.exists(caminhoAlternativo)) {
+                caminho = caminhoAlternativo;
+            } else {
+                System.out.println("Erro ao ler arquivo: arquivo não encontrado em " + arquivo.toAbsolutePath());
+                return;
+            }
+        }
+
         try {
-            List<String> linhas = Files.readAllLines(arquivo);
+            List<String> linhas = Files.readAllLines(caminho);
 
             for (String linha : linhas) {
                 String[] partes = linha.split("-");

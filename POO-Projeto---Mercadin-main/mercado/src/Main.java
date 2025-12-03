@@ -58,6 +58,11 @@ public class Main {
 
                 if (tipo == 1) {
                     System.out.println("\n--- COMIDAS DISPONÍVEIS ---");
+                    if (mercado.getComidas().isEmpty()) {
+                        System.out.println("Nenhuma comida disponível no momento.");
+                        continue;
+                    }
+
                     int i = 1;
                     for (Comida c : mercado.getComidas()) {
                         System.out.print(i + " - ");
@@ -69,6 +74,11 @@ public class Main {
                     int escolha = sc.nextInt();
 
                     try {
+                        if (escolha < 1 || escolha > mercado.getComidas().size()) {
+                            System.out.println("Opção inválida.");
+                            continue;
+                        }
+
                         Comida escolhida = mercado.getComidas().get(escolha - 1);
                         escolhida.validadeOk(hoje);
                         c1.adicionarProduto(escolhida);
